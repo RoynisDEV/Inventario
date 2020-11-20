@@ -4,9 +4,12 @@ const exphbs = require('express-handlebars');
 const { urlencoded } = require('express');
 const methodOverride = require('method-override');
 const session = require('express-session')
-//start
+//inicializadores 
 const app = express();
 require('./database');
+
+
+//minuto 41:13
 
 
 //settings

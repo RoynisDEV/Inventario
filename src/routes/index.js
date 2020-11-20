@@ -1,6 +1,8 @@
+//requerimos objetos de los modulos
 const express = require('express');
 const router = express.Router();
 
+//configuramos la rutas de vistas 
 router.get('/', (req, res) =>{
     res.send('Index');
 });
