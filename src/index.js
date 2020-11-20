@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const session = require('express-session')
 //start
 const app = express();
+require('./database');
 
 
 //settings
@@ -28,7 +29,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// minuto 32:32
+
 
 //global var
 //routes 
@@ -38,6 +39,7 @@ app.use(require('./routes/user'));
 
 
 //static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 //server en escucha
 app.listen(app.get('port'), () =>{
