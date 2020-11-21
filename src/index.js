@@ -9,7 +9,7 @@ const app = express();
 require('./database');
 
 
-//minuto 41:13
+
 
 
 //settings
