@@ -3,8 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 //configuramos la rutas de las vistas 
-router.get('/inventario',(req, res)=>{
-    res.send('producto de inventario de la base de datos')
+
+router.get('/inv/add',(req, res)=>{
+    res.render('invent/new-invent.hbs')
+});
+router.post('/inv/new-item',(req, res)=>{
+    console.log(req.body);
+    res.send('ok');
 });
 
 module.exports = router;

@@ -9,7 +9,7 @@ const app = express();
 require('./database');
 
 
-// min 52:51
+//10:07:19
 
 
 //settings
