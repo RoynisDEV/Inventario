@@ -1,49 +1,35 @@
 <br>
-<div class="row">
-    {{#each inventa }}
-    <div class="col-md-3">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="card-title d-flex justify-content-between aling-items-center">
-                {{nombre}} 
-            </h5>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label> cantidad = {{cantidad}} </label>
-            </div>
-            <div class="form-group">
-                <lavel> peso = {{peso}}</lavel>
-            </div>
-            <div class="form-group">
-                <lavel> costo = ${{costo}}</lavel>
-            </div>
-            <div class="form-group">
-                <lavel> costo Total = ${{costoTotal}}</lavel>
-            </div>
-            <div class="form-group">
-                <lavel> fecha de ingreso = {{date}}</lavel>
-            </div>
-            <div class="form-group">
-               <form action="/inv/dlt/{{_id}}?_method=DELETE" method="POST">
+<table class="table">
+    
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Costo Total</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each inventa}}
+        <tr>
+            <th scope="row">{{nombre}}</th>
+            <td>{{cantidad}}</td>
+            <td>{{peso}}</td>
+            <td>{{costo}}</td>
+            <td>{{costoTotal}}</td>
+            <td><a href="/inv/edit/{{_id}}" class="btn btn-primary btn-sm">Editar</a></td>
+            <td>
+                 <form action="/inv/dlt/{{_id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
-                     <button class="btn btn-danger btn-sm btn-block" type="submit">
+                     <button class="btn btn-danger btn-sm" type="submit">
                          Borrar
                          </button>
-               </form>
-                <div class="form-group">
-                    <a href="/inv/edit/{{_id}}" class="btn btn-primary btn-sm btn-block">Editar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    {{else}}
-    <div class="card mx-auto">
-        <div class="card-body">
-            <p class="lead">No hay inventario</p>
-            <a href="/inv/add" class="btn btn-success btn-block">Agregar Item</a>
-        </div>
-    </div>
-    {{/each}}
-</div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+    
+</table>
