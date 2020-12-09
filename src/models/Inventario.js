@@ -7,7 +7,7 @@ const InventarioSchema = new Schema({
     peso: {type: String, required: true},
     costo: {type: Number, required: true},
     costoTotal: {type: Number, required: true},
-    descripcion:{type: String, },
+    descripcion:{type: String },
     date:{type: Date, default:Date.now}
 });
 module.exports = mongoose.model('Inventario', InventarioSchema)

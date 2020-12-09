@@ -12,7 +12,7 @@ router.get('/inv/add',(req, res)=>{
     res.render('invent/new-invent.hbs');
 });
 router.post('/inv/new-item', async (req, res)=>{
-    const {nombre ,cantidad, peso, costo, costoTotal, description}= req.body;
+    const {nombre ,cantidad, peso, costo, costoTotal, descripcion}= req.body;
     const errors =[];
     if(!nombre){
         errors.push({text: 'Debe ingresar el nombre al producto'});
@@ -29,6 +29,9 @@ router.post('/inv/new-item', async (req, res)=>{
     if(!costoTotal){
         errors.push({text: 'Deve ingresar el costo total'});
     }
+    if(!descripcion){
+        errors.push({text: 'Debe ingresar la descripcion'});
+    }
     if(errors.length > 0){
         res.render('invent/new-invent.hbs',{
             errors,
@@ -36,10 +39,11 @@ router.post('/inv/new-item', async (req, res)=>{
             cantidad,
             peso,
             costo,
-            costoTotal
+            costoTotal,
+            descripcion
         });
     } else{
-        const newInventario = new Inventario({nombre, cantidad, peso, costo, costoTotal, description});
+        const newInventario = new Inventario({nombre, cantidad, peso, costo, costoTotal, descripcion});
         await newInventario.save();
         res.redirect('/inv')
     }
