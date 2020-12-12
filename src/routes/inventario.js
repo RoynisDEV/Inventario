@@ -52,8 +52,13 @@ router.post('/inv/new-item', async (req, res)=>{
 });
 router.get('/inv',  async (req, res)=> {
     const inventa = await Inventario.find().sort({date:'desc'});
+    const fecha = await moment(inventa.date).format('YYYY MM DD');
     res.render('invent/all-invent.hbs',{inventa});
-    console.log(inventa);
+    console.log(inventa)
+    console.log(fecha);
+   
+
+
     
 
 

@@ -5,9 +5,10 @@
         <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">Peso</th>
+            <th scope="col">Peso Bruto</th>
             <th scope="col">Costo</th>
             <th scope="col">Peso Individual</th>
+            <th scope="col">Fecha</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -20,6 +21,7 @@
             <td>{{peso}}</td>
             <td>{{costo}}</td>
             <td>{{costoTotal}}-{{descripcion}}</td>
+            <td>{{date}}</td>
             <td><a href="/inv/edit/{{_id}}" class="btn btn-primary btn-sm">Editar</a></td>
             <td>
                  <form action="/inv/dlt/{{_id}}?_method=DELETE" method="POST">
