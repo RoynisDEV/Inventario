@@ -2,8 +2,7 @@
 const mongoose = require('mongoose')
 
 //configuramos la conneccion a la base de datos y otros configuracion extras 
-mongoose.connect('mongodb+srv://root:megaarea321@cluster0.tetst.mongodb.net/inventario?retryWrites=true&w=majority',{
-   //mongodb://localhost/inventario-db
+mongoose.connect('mongodb://localhost/inventario-db',{
    useCreateIndex: true,
    useNewUrlParser: true,
    useFindAndModify: false,
